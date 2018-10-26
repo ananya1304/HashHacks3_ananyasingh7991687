@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.ananya.charcha.HelpSignUpActivity">
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="#dddddd"
+            android:textSize="42sp" />
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/full_name"
+            android:nextFocusDown="@id/edit_text_email"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@id/edit_text_password"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/edit_text_gender"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/gender"
+            android:inputType="text"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/location"
+            android:inputType="text"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_sleep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/sleep"
+            android:inputType="number"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_factor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/factor"
+            android:inputType="text"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            />
+
+        <TextView
+            android:id="@+id/question1"
+            android:text="@string/q1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r1"/>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r2"/>
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r3"/>
+
+            <RadioButton
+                android:id="@+id/radio3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r4"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question2"
+            android:text="@string/q2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r1"/>
+
+            <RadioButton
+                android:id="@+id/radio5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r2"/>
+
+            <RadioButton
+                android:id="@+id/radio6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r3"/>
+
+            <RadioButton
+                android:id="@+id/radio7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r4"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question3"
+            android:text="@string/q3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r1"/>
+
+            <RadioButton
+                android:id="@+id/radio9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r2"/>
+
+            <RadioButton
+                android:id="@+id/radio10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r3"/>
+
+            <RadioButton
+                android:id="@+id/radio11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r4"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question4"
+            android:text="@string/q4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r1"/>
+
+            <RadioButton
+                android:id="@+id/radio13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r2"/>
+
+            <RadioButton
+                android:id="@+id/radio14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r3"/>
+
+            <RadioButton
+                android:id="@+id/radio15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r4"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/question5"
+            android:text="@string/q5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r1"/>
+
+            <RadioButton
+                android:id="@+id/radio17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r2"/>
+
+            <RadioButton
+                android:id="@+id/radio18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r3"/>
+
+            <RadioButton
+                android:id="@+id/radio19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/r4"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText" />
+
+    </LinearLayout>
+</ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Charcha</string>
+    <string name="full_name">full name</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="phone">phone</string>
+    <string name="register">Register</string>
+    <string name="input_error_name">name required</string>
+    <string name="input_error_email">email required</string>
+    <string name="input_error_password">password required</string>
+    <string name="input_error_phone">phone required</string>
+    <string name="input_error_password_length">password should be atleast 6 characters long</string>
+    <string name="input_error_phone_invalid">enter a valid phone number</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="input_error_email_invalid">enter a valid email</string>
+    <string name="age">age</string>
+    <string name="sleep">sleep</string>
+    <string name="location">location</string>
+    <string name="gender">gender</string>
+    <string name="factor">factor</string>
+    <string name="next">next</string>
+    <string name="q1">How often have you been bothered by feeling down, depressed, irritable, or hopeless over the last two weeks?</string>
+    <string name="q2">How often have you been bothered that you have little interest or pleasure in doing things over the last two weeks?</string>
+    <string name="q3">How often have you been bothered by trouble falling asleep, staying asleep, or sleeping too much over the last two weeks?</string>
+    <string name="q4">How often have you been bothered that you have poor appetite, weight loss, or overeating over the last two weeks?</string>
+    <string name="q5">How often have you been bothered by feeling tired, or having little energy over the last two weeks?</string>
+    <string name="r1">Not at all</string>
+    <string name="r2">Several days</string>
+    <string name="r3">More than half the days</string>
+    <string name="r4">Nearly every day</string>
+</resources>

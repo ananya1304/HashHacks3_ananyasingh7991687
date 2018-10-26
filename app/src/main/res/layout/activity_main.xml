@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What do you want to be?"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <Button
+        android:id="@+id/help_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="139dp"
+        android:onClick="help"
+        android:layout_below="@+id/textView"/>
+
+    <Button
+        android:id="@+id/dost_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dost"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="139dp"
+        android:layout_below="@+id/help_button"/>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="226dp"
+        android:layout_below="@+id/dost_button"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already a member?"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="278dp"
+        android:layout_below="@id/textView2"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="333dp"
+        android:onClick="login"
+        android:layout_below="@+id/textView3"/>
+
+</RelativeLayout>

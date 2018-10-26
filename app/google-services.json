@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1042625178563",
+    "firebase_url": "https://charcha-d7dcc.firebaseio.com",
+    "project_id": "charcha-d7dcc",
+    "storage_bucket": "charcha-d7dcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042625178563:android:596b913f48faffd7",
+        "android_client_info": {
+          "package_name": "com.example.ananya.charcha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042625178563-1oi1qnku8mvjjpko5cmhh9bo9bg0qchp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7LHbkgWgRATtG54nK3a0Ip_Z8xINcJPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
