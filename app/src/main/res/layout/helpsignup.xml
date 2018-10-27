@@ -93,23 +93,11 @@
             android:textColorHint="@color/colorHint"
             />
 
-        <EditText
-            android:id="@+id/edit_text_factor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/factor"
-            android:inputType="text"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint"
-            />
-
         <TextView
             android:id="@+id/question1"
             android:text="@string/q1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup1"
@@ -146,8 +134,7 @@
             android:id="@+id/question2"
             android:text="@string/q2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup2"
@@ -184,8 +171,7 @@
             android:id="@+id/question3"
             android:text="@string/q3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup3"
@@ -222,8 +208,7 @@
             android:id="@+id/question4"
             android:text="@string/q4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup4"
@@ -260,8 +245,7 @@
             android:id="@+id/question5"
             android:text="@string/q5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" />
 
         <RadioGroup
             android:id="@+id/radioGroup5"

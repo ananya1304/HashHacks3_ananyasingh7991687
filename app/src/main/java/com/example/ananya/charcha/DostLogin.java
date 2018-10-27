@@ -15,9 +15,8 @@ import com.sendbird.android.SendBird;
 import com.sendbird.android.SendBirdException;
 import com.sendbird.android.User;
 
-public class LoginActivity extends AppCompatActivity {
+public class DostLogin extends AppCompatActivity {
     private static final String APP_ID = "9DA1B1F4-0BE6-4DA8-82C5-2E81DAB56F23";
-
     SQLiteDatabase db;
     SQLiteOpenHelper openHelper;
     Cursor cursor;
@@ -42,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 String userId=email;
                 String nickname="Anonymous";
                 connectToSendBird(userId, nickname);
-                cursor = db.rawQuery("SELECT *FROM " + DBHelper.TABLE2 + " WHERE " + DBHelper.ATT_10 + "=? AND " + DBHelper.ATT_11 + "=?", new String[]{email, pass});
+                cursor = db.rawQuery("SELECT *FROM " + DBHelper.TABLE_NAME + " WHERE " + DBHelper.COL_3 + "=? AND " + DBHelper.COL_4 + "=?", new String[]{email, pass});
                 if (cursor != null) {
                     if (cursor.getCount() > 0) {
                         Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
@@ -64,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (e != null) {
                     // Error!
                     Toast.makeText(
-                            LoginActivity.this, "" + e.getCode() + ": " + e.getMessage(),
+                            DostLogin.this, "" + e.getCode() + ": " + e.getMessage(),
                             Toast.LENGTH_SHORT)
                             .show();
 
@@ -76,12 +75,13 @@ public class LoginActivity extends AppCompatActivity {
                 // Update the user's nickname
                 updateCurrentUserInfo(userNickname);
 
-                Intent intent = new Intent(LoginActivity.this, ChatActivity.class);
+                Intent intent = new Intent(DostLogin.this, ChatActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
+
     private void updateCurrentUserInfo(String userNickname) {
         SendBird.updateCurrentUserInfo(userNickname, null, new SendBird.UserInfoUpdateHandler() {
             @Override
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (e != null) {
                     // Error!
                     Toast.makeText(
-                            LoginActivity.this, "" + e.getCode() + ":" + e.getMessage(),
+                            DostLogin.this, "" + e.getCode() + ":" + e.getMessage(),
                             Toast.LENGTH_SHORT)
                             .show();
 

@@ -28,4 +28,8 @@
     <string name="r2">Several days</string>
     <string name="r3">More than half the days</string>
     <string name="r4">Nearly every day</string>
+    <string name="q6">Who are you?</string>
+    <string name="bio">bio</string>
+    <string name="prof">Profession</string>
+
 </resources>

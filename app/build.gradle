@@ -17,7 +17,9 @@ android {
         }
     }
 }
-
+repositories {
+    maven { url "https://raw.githubusercontent.com/smilefam/SendBird-SDK-Android/master/" }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
@@ -31,5 +33,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.4'
 
     implementation "com.google.android.gms:play-services-gcm:16.0.0"
+    implementation 'com.lorentzos.swipecards:library:1.0.9'
+
+
+    implementation 'com.github.kittinunf.fuel:fuel-android:1.12.1'
+    implementation 'com.github.bassaer:chatmessageview:1.10.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    implementation 'com.sendbird.sdk:sendbird-android-sdk:3.0.27'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -13,14 +13,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void help(View view)
+    public void helper(View view)
     {
-        Intent myIntent = new Intent(MainActivity.this, HelpSignUpActivity.class);
+        Intent myIntent = new Intent(MainActivity.this, DostIntent.class);
         startActivity(myIntent);
     }
-    public void login(View view)
+
+    public void help(View view)
     {
-        Intent myIntent = new Intent(MainActivity.this, LoginActivity.class);
+        Intent myIntent = new Intent(MainActivity.this, UserIntent.class);
         startActivity(myIntent);
     }
 }

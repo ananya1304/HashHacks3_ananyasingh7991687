@@ -1,38 +1,39 @@
 package com.example.ananya.charcha;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.ananya.charcha.model.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class HelpSignUpActivity extends AppCompatActivity implements View.OnClickListener {
+public class HelpSignUpActivity extends AppCompatActivity {
 
     private EditText editTextName, editTextEmail, editTextPassword, editTextSleep, editTextLocation, editTextGender;
     private ProgressBar progressBar;
 
-    private FirebaseAuth mAuth;
+    Button btnreg;
     private RadioGroup first, second, third, fourth, fifth;
     private RadioButton r1, r2, r3, r4 ,r5;
+    SQLiteOpenHelper openHelper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.helpsignup);
 
+        openHelper = new DBHelper(this);
         editTextName = findViewById(R.id.edit_text_name);
         editTextEmail = findViewById(R.id.edit_text_email);
         editTextPassword = findViewById(R.id.edit_text_password);
@@ -47,30 +48,6 @@ public class HelpSignUpActivity extends AppCompatActivity implements View.OnClic
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        findViewById(R.id.button_register).setOnClickListener(this);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if (mAuth.getCurrentUser() != null) {
-            //handle the already login user
-            Intent myIntent=new Intent(HelpSignUpActivity.this, LoginActivity.class);
-            HelpSignUpActivity.this.startActivity(myIntent);
-        }
-    }
-
-    private void registerUser() {
-        final String name = editTextName.getText().toString().trim();
-        final String email = editTextEmail.getText().toString().trim();
-        final String gender = editTextGender.getText().toString().trim();
-        final String sleep = editTextSleep.getText().toString().trim();
-        final String location = editTextLocation.getText().toString().trim();
-        final String type = "user";
         int rid1=first.getCheckedRadioButtonId();
         View rB1 = first.findViewById(rid1);
         int i1 = first.indexOfChild(rB1);
@@ -96,95 +73,43 @@ public class HelpSignUpActivity extends AppCompatActivity implements View.OnClic
         int i5 = fifth.indexOfChild(rB5);
         r5 = (RadioButton) fifth.getChildAt(i5);
 
-        final String ans1 = r1.getText().toString();
-        final String ans2 = r2.getText().toString();
-        final String ans3 = r3.getText().toString();
-        final String ans4 = r4.getText().toString();
-        final String ans5 = r5.getText().toString();
-        String password = editTextPassword.getText().toString().trim();
+        btnreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db = openHelper.getWritableDatabase();
+                String name = editTextName.getText().toString();
+                String email = editTextEmail.getText().toString();
+                String gender = editTextGender.getText().toString();
+                String sleep = editTextSleep.getText().toString();
+                String location = editTextLocation.getText().toString();
+                String ans1 = r1.getText().toString();
+                final String ans2 = r2.getText().toString();
+                final String ans3 = r3.getText().toString();
+                final String ans4 = r4.getText().toString();
+                final String ans5 = r5.getText().toString();
+                String password = editTextPassword.getText().toString();
 
-        if (name.isEmpty()) {
-            editTextName.setError(getString(R.string.input_error_name));
-            editTextName.requestFocus();
-            return;
-        }
-
-        if (email.isEmpty()) {
-            editTextEmail.setError(getString(R.string.input_error_email));
-            editTextEmail.requestFocus();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError(getString(R.string.input_error_email_invalid));
-            editTextEmail.requestFocus();
-            return;
-        }
-
-        if (password.isEmpty()) {
-            editTextPassword.setError(getString(R.string.input_error_password));
-            editTextPassword.requestFocus();
-            return;
-        }
-
-        if (password.length() < 6) {
-            editTextPassword.setError(getString(R.string.input_error_password_length));
-            editTextPassword.requestFocus();
-            return;
-        }
-
-
-
-        progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()) {
-
-                            User user = new User(
-                                    name,
-                                    gender,
-                                    email,
-                                    location,
-                                    sleep,
-                                    ans1,
-                                    ans2,
-                                    ans3,
-                                    ans4,
-                                    ans5,
-                                    type
-                            );
-
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(HelpSignUpActivity.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-                                    } else {
-                                        //display a failure message
-                                    }
-                                }
-                            });
-
-                        } else {
-                            Toast.makeText(HelpSignUpActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+                insertdata(name, email, password, gender, location, sleep, ans1, ans2, ans3, ans4, ans5);
+                Toast.makeText(getApplicationContext(), "register successfully", Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_register:
-                registerUser();
-                break;
-        }
+    public void insertdata(String name, String email, String pass, String gender, String loc, String sleep, String a1, String a2, String a3, String a4, String a5){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelper.ATT_2, name);
+        contentValues.put(DBHelper.ATT_10, email);
+        contentValues.put(DBHelper.ATT_11, pass);
+        contentValues.put(DBHelper.ATT_12, gender);
+        contentValues.put(DBHelper.ATT_3, loc);
+        contentValues.put(DBHelper.ATT_4, sleep);
+        contentValues.put(DBHelper.ATT_5, a1);
+        contentValues.put(DBHelper.ATT_6, a2);
+        contentValues.put(DBHelper.ATT_7, a3);
+        contentValues.put(DBHelper.ATT_8, a4);
+        contentValues.put(DBHelper.ATT_9, a5);
+
+        long id = db.insert(DBHelper.TABLE_NAME, null, contentValues);
     }
 }
