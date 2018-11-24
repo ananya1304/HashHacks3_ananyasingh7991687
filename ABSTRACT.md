@@ -16,7 +16,7 @@ Upon right swiping, the user is automatically matched with the Dost, and can go 
 ## Technologies Used
 1.	Android Studio <br/>
 2.	Google Firebase <br/>
-3.	Dialogue Flow <br/>
+3.	DialogFlow <br/>
 4.	Locally created APIs for the algorithms <br/>
 ## Future Expansion
 1.	Dosts would have the option to create a community based on users with similar problems, or users whose mutual, monitored discussion would help in a synergic fashion. <br/>
